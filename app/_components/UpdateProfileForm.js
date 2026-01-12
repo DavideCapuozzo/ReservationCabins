@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { updateGuest } from "../_lib/action";
 import { useFormStatus } from "react-dom";
+import Image from "next/image";
 
 
 export default function UpdateProfileForm({ children, guest }) {
@@ -35,9 +36,11 @@ export default function UpdateProfileForm({ children, guest }) {
             <div className="space-y-2">
                 <div className="flex items-center justify-between">
                     <label htmlFor="nationality">Where are you from?</label>
-                    <img
+                    <Image
                         src={countryFlag}
                         alt="Country flag"
+                        width={20}
+                        height={20}
                         className="h-5 rounded-sm"
                     />
                 </div>
