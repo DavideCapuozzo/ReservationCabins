@@ -17,33 +17,14 @@ export default async function Page() {
   const guest = await getGuest(session.user.email);
   console.log('Guest:', guest);
 
-  // Se guest è null, reindirizza o mostra un messaggio
-  if (!guest) {
-    return (
-      <div>
-        <h2 className="font-semibold text-2xl text-accent-400 mb-4">
-          Profile not found
-        </h2>
-        <p className="text-lg mb-8 text-primary-200">
-          Your profile was not created during sign-in. Please sign out and sign in again to create your profile.
-        </p>
-        <form action={async () => {
-          'use server';
-          await signOut({ redirectTo: '/login' });
-        }}>
-          <button type="submit" className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all">
-            Sign out and try again
-          </button>
-        </form>
-      </div>
-    );
-  }
-
-  // CHANGE
-
-  const countryFlag = "pt.jpg";
-  const nationality = "portugal";
-
+  // Se guest è null, crea un oggetto guest vuoto per permettere la compilazione del form
+  const guestData = guest || {
+    fullName: session?.user?.name || '',
+    email: session?.user?.email || '',
+    nationality: '',
+    nationalID: '',
+    countryFlag: ''
+  };
 
   return (
     <div>
@@ -56,13 +37,13 @@ export default async function Page() {
         faster and smoother. See you soon!
       </p>
 
-      <UpdateProfileForm guest={guest}>
+      <UpdateProfileForm guest={guestData}>
 
         <SelectCountry
           name="nationality"
           id="nationality"
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
-          defaultCountry={guest.nationality}
+          defaultCountry={guestData.nationality}
         />
 
       </UpdateProfileForm>
