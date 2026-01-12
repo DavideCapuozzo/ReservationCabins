@@ -47,7 +47,7 @@ export default async function createBooking(bookingData, formData) {
         status: 'unconfirmed',
     };
 
-    //console.log('NEW BOOKING', newBooking);
+    console.log('NEW BOOKING', newBooking);
 
     const { error } = await supabase
         .from('bookings')

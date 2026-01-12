@@ -30,7 +30,7 @@ const navLinks = [
 
 function SideNavigation() {
   const pathname = usePathname();
-  console.log('PATHNAME IN SIDE NAVIGATION:', pathname);
+  // console.log('PATHNAME IN SIDE NAVIGATION:', pathname);
   return (
     <nav className='border-r border-primary-900'>
       <ul className='flex flex-col gap-2 h-full text-lg'>

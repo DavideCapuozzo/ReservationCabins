@@ -11,7 +11,7 @@ export default function Filter() {
     const activeFilter = searchParams?.get("capacity") || "all";
 
     function handleFilter(filter){
-        console.log("FILTER SELECTED", filter);
+        // console.log("FILTER SELECTED", filter);
         const params = new URLSearchParams(searchParams);  // andiamo ad inserire nella nuova istanza serchParams i parametri già esistenti per non perderli in caso avessimo  avuto altri filtri oltre alla capacità se non li avessimo passati sarebbero andati persi
         params.set("capacity", filter);
         router.replace(`${pathname}?${params.toString()}` , {scroll: false} );  // router.replace ci permette di cambiare l'url senza ricaricare la pagina, in questo modo possiamo aggiornare i parametri di ricerca senza perdere lo stato della pagina, con {scroll: false} evitiamo che la pagina venga scrollata in alto automaticamente quando cambiamo il filtro

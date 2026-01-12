@@ -8,7 +8,7 @@ export default async function AccountPage() {
 
   const session = await auth()
 
-  console.log('Session in AccountPage:', session);
+  // console.log('Session in AccountPage:', session);
 
   return (
     <div>

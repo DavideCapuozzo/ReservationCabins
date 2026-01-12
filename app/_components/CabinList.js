@@ -24,7 +24,7 @@ export default async function CabinList({ filter }) {
     if (filter === "large") {
         displayedCabins=cabins.filter(cabin => cabin.maxCapacity >= 8);
     }
-    console.log("FILTER IN CABIN LIST", displayedCabins);
+    // console.log("FILTER IN CABIN LIST", displayedCabins);
 
     if(!cabins.length) {
         return null

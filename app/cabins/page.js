@@ -15,7 +15,7 @@ export const metadata = {
 
 export default async function Page({searchParams}) {  // searchParams è un oggetto che contiene i parametri di ricerca passati nell'url, ad esempio ?capacity=small e viene passato automaticamente da Next.js ai componenti di pagina che ne fanno richiesta
 
-  console.log("SEARCH PARAMS", searchParams);
+  // console.log("SEARCH PARAMS", searchParams);
 
   const filter = searchParams?.capacity ?? "all";
 

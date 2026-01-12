@@ -51,7 +51,7 @@ function DateSelector({ settings, bookedDates, cabin }) {
   // SETTINGS
   const { minBookingLength, maxBookingLength } = settings;
 
-  console.log(bookedDates);
+  // console.log(bookedDates);
 
   return (
     <div className="flex flex-col justify-between">
@@ -62,7 +62,7 @@ function DateSelector({ settings, bookedDates, cabin }) {
           mode="range"
           selected={displayRange}
           onSelect={(newRange) => { 
-            console.log("RANGE", newRange); 
+            // console.log("RANGE", newRange); 
             if (newRange === undefined) {
               // Doppio click sulla stessa data - mantieni il range corrente
               return;
