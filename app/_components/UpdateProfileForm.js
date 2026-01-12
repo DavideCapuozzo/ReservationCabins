@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function UpdateProfileForm({ children, guest }) {
 
     const [count, setCount] = useState();
-    const { fullName, email, nationality, nationalID, countryFlag } = guest;
+    const { fullName, email, nationality, nationalID, countryFlag } = guest || {};
 
     return (
         <form action={updateGuest} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
