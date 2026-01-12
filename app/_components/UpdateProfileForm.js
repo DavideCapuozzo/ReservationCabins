@@ -36,13 +36,15 @@ export default function UpdateProfileForm({ children, guest }) {
             <div className="space-y-2">
                 <div className="flex items-center justify-between">
                     <label htmlFor="nationality">Where are you from?</label>
-                    <Image
-                        src={countryFlag}
-                        alt="Country flag"
-                        width={20}
-                        height={20}
-                        className="h-5 rounded-sm"
-                    />
+                    {countryFlag && (
+                        <Image
+                            src={countryFlag}
+                            alt="Country flag"
+                            width={20}
+                            height={20}
+                            className="h-5 rounded-sm"
+                        />
+                    )}
                 </div>
 
                 {children}
